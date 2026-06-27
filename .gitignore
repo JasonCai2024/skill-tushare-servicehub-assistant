@@ -1,0 +1,7 @@
+.env
+data/credentials.json
+data/results/
+data/tushare_cache.db
+data/tushare_warehouse.db
+__pycache__/
+*.pyc

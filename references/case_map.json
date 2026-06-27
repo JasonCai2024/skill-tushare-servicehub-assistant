@@ -1,0 +1,286 @@
+[
+  {
+    "tc_id": "001",
+    "scope": "api",
+    "short_name": "stock_basic",
+    "api_name": "stock_basic",
+    "title_cn": "股票列表",
+    "purpose": "验证 stock_basic 接口可调用；按 exchange=SSE,list_status=L 获取上交所在市股票；返回该接口默认完整字段集合并校验关键字段。",
+    "params": {
+      "exchange": "SSE",
+      "list_status": "L"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "symbol", "name"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "002",
+    "scope": "api",
+    "short_name": "stock_company",
+    "api_name": "stock_company",
+    "title_cn": "上市公司基本信息",
+    "purpose": "验证 stock_company 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "exchange": "SSE"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "com_name", "exchange"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "003",
+    "scope": "api",
+    "short_name": "income",
+    "api_name": "income",
+    "title_cn": "利润表",
+    "purpose": "验证 income 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "period": "20241231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "end_date"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "004",
+    "scope": "api",
+    "short_name": "balancesheet",
+    "api_name": "balancesheet",
+    "title_cn": "资产负债表",
+    "purpose": "验证 balancesheet 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "period": "20241231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "end_date"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "005",
+    "scope": "api",
+    "short_name": "cashflow",
+    "api_name": "cashflow",
+    "title_cn": "现金流量表",
+    "purpose": "验证 cashflow 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "period": "20241231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "end_date"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "006",
+    "scope": "api",
+    "short_name": "forecast",
+    "api_name": "forecast",
+    "title_cn": "业绩预告",
+    "purpose": "验证 forecast 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ann_date": "20240430"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "end_date", "type"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "007",
+    "scope": "api",
+    "short_name": "express",
+    "api_name": "express",
+    "title_cn": "业绩快报",
+    "purpose": "验证 express 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ann_date": "20250430"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "end_date"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "008",
+    "scope": "api",
+    "short_name": "fina_indicator",
+    "api_name": "fina_indicator",
+    "title_cn": "财务指标数据",
+    "purpose": "验证 fina_indicator 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "period": "20241231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "end_date"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "009",
+    "scope": "api",
+    "short_name": "fina_mainbz",
+    "api_name": "fina_mainbz",
+    "title_cn": "主营业务构成",
+    "purpose": "验证 fina_mainbz 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "period": "20241231",
+      "type": "P"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "end_date", "bz_item"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "010",
+    "scope": "api",
+    "short_name": "top10_holders",
+    "api_name": "top10_holders",
+    "title_cn": "前十大股东",
+    "purpose": "验证 top10_holders 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "period": "20241231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "end_date", "holder_name"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "011",
+    "scope": "api",
+    "short_name": "top10_floatholders",
+    "api_name": "top10_floatholders",
+    "title_cn": "前十大流通股东",
+    "purpose": "验证 top10_floatholders 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "period": "20241231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "end_date", "holder_name"],
+    "key_columns": ["ts_code", "end_date"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "012",
+    "scope": "api",
+    "short_name": "pledge_stat",
+    "api_name": "pledge_stat",
+    "title_cn": "股权质押统计数据",
+    "purpose": "验证 pledge_stat 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "end_date"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "013",
+    "scope": "api",
+    "short_name": "pledge_detail",
+    "api_name": "pledge_detail",
+    "title_cn": "股权质押明细数据",
+    "purpose": "验证 pledge_detail 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000014.SZ"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "014",
+    "scope": "api",
+    "short_name": "repurchase",
+    "api_name": "repurchase",
+    "title_cn": "股票回购",
+    "purpose": "验证 repurchase 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "start_date": "20240101",
+      "end_date": "20251231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "proc"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "015",
+    "scope": "api",
+    "short_name": "share_float",
+    "api_name": "share_float",
+    "title_cn": "限售股解禁",
+    "purpose": "验证 share_float 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ann_date": "20241220"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "float_date"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "016",
+    "scope": "api",
+    "short_name": "block_trade",
+    "api_name": "block_trade",
+    "title_cn": "大宗交易",
+    "purpose": "验证 block_trade 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "start_date": "20240101",
+      "end_date": "20251231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "trade_date", "price", "vol"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "017",
+    "scope": "api",
+    "short_name": "stk_holdertrade",
+    "api_name": "stk_holdertrade",
+    "title_cn": "股东增减持",
+    "purpose": "验证 stk_holdertrade 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ann_date": "20190426"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "ann_date", "holder_name", "in_de"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  },
+  {
+    "tc_id": "018",
+    "scope": "api",
+    "short_name": "stk_surv",
+    "api_name": "stk_surv",
+    "title_cn": "机构调研数据",
+    "purpose": "验证 stk_surv 接口可调用，且返回包含核心业务字段，关键字段在非空结果中不为空。",
+    "params": {
+      "ts_code": "000001.SZ",
+      "start_date": "20240101",
+      "end_date": "20251231"
+    },
+    "fields": "",
+    "required_columns": ["ts_code", "name", "surv_date"],
+    "key_columns": ["ts_code"],
+    "min_rows": 0
+  }
+]
