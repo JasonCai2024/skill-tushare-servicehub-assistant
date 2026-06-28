@@ -1,3 +1,6 @@
 display_name: TuShare ServiceHub 助手
-short_description: 通过 ServiceHub 执行 TuShare 用例、场景分析和自定义查询
-default_prompt: 帮我通过 ServiceHub 查询 TuShare 数据，并优先按标准用例或四类主场景来组织执行。
+short_description: 通过 ServiceHub 执行 TuShare 用例、泛分析场景和自定义查询
+default_prompt: >-
+  帮我通过 ServiceHub 查询 TuShare 数据，并优先按标准用例或四类主场景来组织执行。
+  如果我的需求只是了解上市公司的情况、经营、财务、行情或股权结构，请默认按这个技能处理。
+  只有当我明确要求投资建议、交易建议、目标价、止损位或多智能体决策分析时，才切换到上层决策技能。
